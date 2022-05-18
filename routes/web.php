@@ -22,11 +22,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/factura','facturaController@index')->name('factura');
-Route::post('/factura/datacli/','facturaController@datacli')->name('factura.datacli');
-Route::post('/factura/create','facturaController@create')->name('factura.create');
-Route::post('/factura/update/{fac_id}','facturaController@update')->name('factura.update');
-Route::post('/fac_detalle/create','factura_detalleController@create')->name('fac_detalle.create');
+Route::post('/facturas_detalle','FacturasController@detalle')->name('facturas.detalle');
+
+Route::resource('facturas','FacturasController');
+
+Route::get('/factura_pdf/{fac_id}','FacturasController@facturas_pdf')->name('facturas.pdf');;
+
 
 Route::get('/temporada','temporadaController@index')->name('temporada');
 route::post('/temporada/store','temporadaController@store')->name('temporada.store');

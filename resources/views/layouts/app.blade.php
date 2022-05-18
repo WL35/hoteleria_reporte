@@ -73,7 +73,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{{route('tipos')}}">Tipos</a>
                             <a class="dropdown-item" href="{{route('temporada')}}">Temporadas</a>
-                            <a class="dropdown-item" href="{{route('factura')}}">Factura</a>
+                            <a class="dropdown-item" href="{{route('facturas.index')}}">Factura</a>
 
                         </div>
                     </div>

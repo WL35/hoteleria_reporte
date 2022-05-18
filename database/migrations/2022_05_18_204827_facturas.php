@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Factura extends Migration
+class Facturas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class Factura extends Migration
      */
     public function up()
     {
-        Schema::create('factura', function (Blueprint $table) {
+        Schema::create('facturas', function (Blueprint $table) {
             $table->id('fac_id');
-            // $table->foreignId('fac_id')->references('fac_id')->on('factura');
             $table->foreignId('cli_id')->references('cli_id')->on('clientes');
+       
+            $table->date('fac_fecha');
+            
+            $table->string('fac_tipo_pago');///Trasferencia Efectivo Tarjeta
             
             
-            $table->float('fac_vt');
         });
     }
 
@@ -30,7 +32,6 @@ class Factura extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factura');
-        
+        Schema::dropIfExists('facturas');
     }
 }

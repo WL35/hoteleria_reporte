@@ -4,13 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class factura_detalle extends Model
+class detalle extends Model
 {
+    //
+
     public $timestamps=false;
-    protected $table='factura_detalle';
+    protected $table='facturas_detalle';
     protected $primaryKey='fad_id';
 
     protected $fillable=[
-    'fac_id','hab_id','fad_vt',
-    ];
+    'fac_id',
+    'hab_id',
+  
+     ];
+
 }
