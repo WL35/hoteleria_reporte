@@ -136,9 +136,9 @@ class FacturasController extends Controller
             JOIN clientes c ON c.cli_id=f.cli_id
             WHERE f.fac_id=$fac_id ");
 
-        $detalle=DB::select("SELECT * FROM facturas_detalle d 
-                   JOIN habitaciones h ON h.hab_id=d.hab_id
-                   WHERE d.fac_id=$fac_id 
+        $detalle=DB::select("SELECT * FROM facturas_detalle fd 
+        JOIN habitaciones h ON fd.hab_id=h.hab_id JOIN tipo tip on h.tip_id=tip.tip_id JOIN temporada tem on tip.tem_id=tem.tem_id
+        WHERE fd.fac_id=$fac_id 
             ");
 
         $pdf = PDF::loadView('facturas.pdf',[ 'factura'=>$factura[0],'detalle'=>$detalle ]);
