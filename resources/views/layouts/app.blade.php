@@ -74,6 +74,7 @@
                             <a class="dropdown-item" href="{{route('tipos')}}">Tipos</a>
                             <a class="dropdown-item" href="{{route('temporada')}}">Temporadas</a>
                             <a class="dropdown-item" href="{{route('facturas.index')}}">Factura</a>
+                            <a class="dropdown-item" href="{{route('reporte')}}">Reportes</a>
 
                         </div>
                     </div>

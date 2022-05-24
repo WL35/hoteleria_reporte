@@ -22,12 +22,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::post('/facturas_detalle','FacturasController@detalle')->name('facturas.detalle');
 
 Route::resource('facturas','FacturasController');
 
 Route::get('/factura_pdf/{fac_id}','FacturasController@facturas_pdf')->name('facturas.pdf');;
 
+
+Route::get('/reporte','reporteController@index')->name('reporte');
 
 Route::get('/temporada','temporadaController@index')->name('temporada');
 route::post('/temporada/store','temporadaController@store')->name('temporada.store');
